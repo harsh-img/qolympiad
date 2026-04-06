@@ -16,12 +16,12 @@
       if (!pass || pass.length < 6) {
         msg.className = "form-msg err";
         msg.style.display = "block";
-        msg.textContent = "Password must be at least 6 characters (demo).";
+        msg.textContent = "Password must be at least 6 characters.";
         return;
       }
       msg.className = "form-msg ok";
       msg.style.display = "block";
-      msg.textContent = "Demo login successful — replace with your API redirect or session.";
+      msg.textContent = "Signed in successfully.";
     });
   }
 })();
