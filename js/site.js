@@ -36,6 +36,31 @@
         b.classList.remove("active");
       });
       btn.classList.add("active");
+
+      var grid = document.querySelector(".courses-grid");
+      var key = btn.getAttribute("data-filter");
+      if (!grid || !key) return;
+
+      var cards = grid.querySelectorAll(".ccard");
+      cards.forEach(function (card) {
+        var raw = card.getAttribute("data-cats") || "";
+        var cats = raw.split(/\s+/).filter(Boolean);
+        var show = key === "all";
+        if (!show && cats.length) {
+          if (key === "scholar") {
+            show = cats.indexOf("scholar") !== -1;
+          } else if (key === "nursery-kg") {
+            show = cats.indexOf("nursery-kg") !== -1;
+          } else if (key === "primary") {
+            show = cats.indexOf("primary") !== -1 || cats.indexOf("scholar") !== -1;
+          } else if (key === "middle") {
+            show = cats.indexOf("middle") !== -1 || cats.indexOf("scholar") !== -1;
+          } else if (key === "secondary") {
+            show = cats.indexOf("secondary") !== -1 || cats.indexOf("scholar") !== -1;
+          }
+        }
+        card.toggleAttribute("hidden", !show);
+      });
     });
   });
 

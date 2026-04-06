@@ -34,7 +34,7 @@
   <div class="page-banner animate-banner">
     <div class="sec-eyebrow" style="color:var(--sky);margin-bottom:0.5rem;">Exam listing</div>
     <h1>Programmes &amp; papers 📚</h1>
-    <p>Choose a bundle by stage — hall sittings, invigilation, and score feedback included. Fees are indicative.</p>
+    <p>Choose a bundle by stage — hall sittings, invigilation, and score feedback included. Fees vary by centre; amounts shown are indicative.</p>
   </div>
   <div class="listing-intro reveal-on-scroll">
     <div class="listing-intro-grid">
@@ -49,17 +49,17 @@
       </div>
     </div>
   </div>
-  <div class="filter-wrap filter-navy reveal-on-scroll">
-    <button type="button" class="fb active">All</button>
-    <button type="button" class="fb">Nursery / KG</button>
-    <button type="button" class="fb">Class 1–5</button>
-    <button type="button" class="fb">Class 6–8</button>
-    <button type="button" class="fb">Class 9–10</button>
-    <button type="button" class="fb">Scholar</button>
+  <div class="filter-wrap filter-navy reveal-on-scroll" role="toolbar" aria-label="Filter programmes by stage">
+    <button type="button" class="fb active" data-filter="all">All</button>
+    <button type="button" class="fb" data-filter="nursery-kg">Nursery / KG</button>
+    <button type="button" class="fb" data-filter="primary">Class 1–5</button>
+    <button type="button" class="fb" data-filter="middle">Class 6–8</button>
+    <button type="button" class="fb" data-filter="secondary">Class 9–10</button>
+    <button type="button" class="fb" data-filter="scholar">Scholar</button>
   </div>
   <div class="courses-wrap">
     <div class="courses-grid reveal-on-scroll">
-      <div class="ccard">
+      <div class="ccard" data-cats="nursery-kg">
         <div class="ccard-head ch-pink">🌸<span class="cc-badge">POPULAR</span></div>
         <div class="ccard-body">
           <div class="cc-title">Little Learners Pack</div>
@@ -77,7 +77,7 @@
           <div class="cc-foot"><div><span class="cc-price">₹3,200</span><span class="cc-old">₹4,500</span></div><a href="register.html" class="cc-btn">Enrol</a></div>
         </div>
       </div>
-      <div class="ccard">
+      <div class="ccard" data-cats="primary">
         <div class="ccard-head ch-blue">📘<span class="cc-badge">CORE</span></div>
         <div class="ccard-body">
           <div class="cc-title">Primary Olympiad Bundle</div>
@@ -95,7 +95,7 @@
           <div class="cc-foot"><div><span class="cc-price">₹6,500</span><span class="cc-old">₹8,900</span></div><a href="register.html" class="cc-btn">Enrol</a></div>
         </div>
       </div>
-      <div class="ccard">
+      <div class="ccard" data-cats="middle">
         <div class="ccard-head ch-teal">🔬</div>
         <div class="ccard-body">
           <div class="cc-title">Middle Mastery</div>
@@ -113,7 +113,7 @@
           <div class="cc-foot"><div><span class="cc-price">₹9,800</span><span class="cc-old">₹13,000</span></div><a href="register.html" class="cc-btn">Enrol</a></div>
         </div>
       </div>
-      <div class="ccard">
+      <div class="ccard" data-cats="secondary">
         <div class="ccard-head ch-orange">🎯<span class="cc-badge">BOARD</span></div>
         <div class="ccard-body">
           <div class="cc-title">Secondary Board-ready</div>
@@ -131,7 +131,7 @@
           <div class="cc-foot"><div><span class="cc-price">₹14,500</span><span class="cc-old">₹19,000</span></div><a href="register.html" class="cc-btn">Enrol</a></div>
         </div>
       </div>
-      <div class="ccard">
+      <div class="ccard" data-cats="scholar primary middle secondary">
         <div class="ccard-head ch-purple">🏅</div>
         <div class="ccard-body">
           <div class="cc-title">Scholar Stretch</div>

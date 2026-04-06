@@ -133,19 +133,28 @@
 </main>
 <script src="js/site.js"></script>
 <script>
-  document.getElementById("reg-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    var msg = document.getElementById("form-msg");
-    if (!document.querySelectorAll('input[name="exam"]:checked').length) {
-      msg.className = "form-msg err";
+  (function () {
+    var form = document.getElementById("reg-form");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var msg = document.getElementById("form-msg");
+      if (!msg) return;
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      if (!form.querySelectorAll('input[name="exam"]:checked').length) {
+        msg.className = "form-msg err";
+        msg.style.display = "block";
+        msg.textContent = "Please tick at least one exam paper.";
+        return;
+      }
+      msg.className = "form-msg ok";
       msg.style.display = "block";
-      msg.textContent = "Please tick at least one exam paper.";
-      return;
-    }
-    msg.className = "form-msg ok";
-    msg.style.display = "block";
-    msg.textContent = "Thank you for registering. We will confirm your slot by email or phone.";
-  });
+      msg.textContent = "Thank you for registering. We will confirm your slot by email or phone.";
+    });
+  })();
 </script>
 </body>
 </html>
