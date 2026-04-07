@@ -409,6 +409,19 @@ nav.site-nav {
   margin-bottom: 1rem;
 }
 
+.hero-brand-mark {
+  display: inline;
+  white-space: nowrap;
+}
+
+.hero-brand-q {
+  color: var(--white);
+}
+
+.hero-brand-oly {
+  color: var(--orange);
+}
+
 .hero h1 .hi {
   color: var(--orange);
 }
@@ -1536,6 +1549,134 @@ section {
 .cc-btn:hover {
   background: var(--orange);
   transform: scale(1.05);
+}
+
+.cc-foot-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+a.cc-btn-outline {
+  background: transparent;
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 0.82rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a.cc-btn-outline:hover {
+  background: var(--blue-light);
+  transform: scale(1.03);
+}
+
+/* Exam guide (process / timings) */
+.exam-guide-toc {
+  background: var(--blue-light);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.exam-guide-toc-title {
+  font-family: "Baloo 2", cursive;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 0.75rem;
+}
+
+.exam-guide-toc ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.exam-guide-toc a {
+  font-weight: 800;
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.exam-guide-toc a:hover {
+  text-decoration: underline;
+  color: var(--orange);
+}
+
+.exam-guide-body ol.exam-guide-steps {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.exam-guide-body ol.exam-guide-steps li {
+  position: relative;
+  padding-left: 2.25rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.65;
+}
+
+.exam-guide-body ol.exam-guide-steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.65rem;
+  height: 1.65rem;
+  background: var(--blue);
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guide-table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 1.25rem;
+  border-radius: 14px;
+  border: 2px solid var(--border);
+}
+
+table.exam-guide-table {
+  margin: 0;
+  min-width: 520px;
+}
+
+.exam-guide-faq dt {
+  font-weight: 800;
+  color: var(--navy);
+  margin-top: 1.1rem;
+  font-size: 0.95rem;
+}
+
+.exam-guide-faq dt:first-child {
+  margin-top: 0;
+}
+
+.exam-guide-faq dd {
+  margin: 0.35rem 0 0;
+  padding: 0;
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 0.9rem;
 }
 
 /* Home — compare teaser (what you’re comparing) */
@@ -3299,7 +3440,8 @@ a.btn-enroll {
   text-decoration: none;
 }
 
-.cc-foot a.cc-btn {
+.cc-foot a.cc-btn,
+.cc-foot a.cc-btn-outline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
