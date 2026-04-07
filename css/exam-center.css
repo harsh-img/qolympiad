@@ -610,6 +610,12 @@ nav.site-nav {
   margin-right: 0.5rem;
 }
 
+a.class-pill {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
 .class-pill {
   padding: 7px 18px;
   border-radius: 100px;

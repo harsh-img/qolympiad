@@ -82,4 +82,30 @@
       el.classList.add("is-visible");
     });
   }
+
+  /* exams.html: apply filter from ?filter= or #hash (e.g. from home class pills) */
+  var coursesGrid = document.querySelector(".courses-grid");
+  if (coursesGrid) {
+    var params = new URLSearchParams(window.location.search);
+    var f = params.get("filter");
+    if (!f && window.location.hash) {
+      var h = window.location.hash.slice(1);
+      if (/^(all|nursery-kg|primary|middle|secondary|scholar)$/.test(h)) {
+        f = h;
+      }
+    }
+    if (f) {
+      var trigger = document.querySelector('.filter-wrap .fb[data-filter="' + f + '"]');
+      if (trigger) {
+        trigger.click();
+        window.requestAnimationFrame(function () {
+          var anchor = document.querySelector(".filter-wrap") || coursesGrid;
+          if (anchor && anchor.getBoundingClientRect) {
+            var top = anchor.getBoundingClientRect().top + window.pageYOffset - 88;
+            window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+          }
+        });
+      }
+    }
+  }
 })();
