@@ -788,6 +788,17 @@ section {
   gap: 1rem;
 }
 
+a.exam-chip {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+a.exam-chip:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
 .exam-chip {
   background: var(--bg);
   border: 2px solid var(--border);
